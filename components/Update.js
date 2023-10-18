@@ -22,14 +22,9 @@ const Update = () => {
   const [rendered, setRendered] = useState(false);
 
   const onSubmit = async (value) => {
-    console.log(state.slug, user.username, user.usertoken, "updateSlug");
+    console.log(state.slug, "updateSlug");
     try {
-      const res = await putFetcher(
-        `${POST}/${state.slug}`,
-        value,
-        user.usertoken,
-        user.username
-      );
+      const res = await putFetcher(`${POST}/${state.slug}`, value);
       console.log(res, "updatedSubmit");
       if (res.status == 200) {
         Toast.show({

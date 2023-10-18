@@ -2,10 +2,10 @@ import axios from "axios";
 import { getAuthToken, getUserName } from "../../utils/asyncStorage";
 import { useSelector } from "react-redux";
 
-const authSetup = (userToken, userName) => {
+const authSetup = async () => {
   // const state = useSelector((state) => state.user);
-  // const userToken = await getAuthToken();
-  // const userName = await getUserName();
+  const userToken = await getAuthToken();
+  const userName = await getUserName();
   // const userToken = state.usertoken;
   // const userName = state.username;
   console.log(userToken, userName, "storage when call api");
@@ -47,10 +47,10 @@ export const fetcher = async (value) => {
   return result;
 };
 
-export const postFetcher = async (value, requestData, usertoken, username) => {
+export const postFetcher = async (value, requestData) => {
   let result;
 
-  await authSetup(usertoken, username);
+  await authSetup();
 
   // calling api
 
@@ -80,12 +80,10 @@ export const deleteFetcher = async (value) => {
   return result;
 };
 
-export const putFetcher = async (value, requestData, usertoken, username) => {
+export const putFetcher = async (value, requestData) => {
   let result;
 
-  console.log(username, usertoken, "iiiiiiiiii");
-
-  authSetup(usertoken, username);
+  await authSetup();
 
   // calling api
 
