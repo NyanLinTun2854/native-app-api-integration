@@ -8,6 +8,24 @@
       "expo-router"
     ],
     "name": "my-app",
-    "slug": "my-app"
+    "slug": "my-app",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "4861c22a-f652-494f-b7f2-41c53efbb998"
+      }
+    },
+    "android": {
+      "package": "com.nyanlintun2854.myapp"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/4861c22a-f652-494f-b7f2-41c53efbb998"
+    },
+    "ios": {}
   }
 }
